@@ -1,0 +1,24 @@
+<div class="sidebar">
+  <div class="logo">
+    <a [routerLink]="'/'"
+      ><mat-icon [svgIcon]="icons.logo" class="icon icon--logo"></mat-icon
+    ></a>
+  </div>
+  <nav class="nav">
+    <ul class="nav--primary">
+      <li *ngFor="let navLink of sidebarConfig.nav_links">
+        <mat-icon class="icon">{{ navLink.icon }}</mat-icon>
+        <a [routerLink]="navLink.href">{{ navLink.title }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="nav">
+    <ul class="nav--action">
+      <li *ngFor="let navLink of sidebarConfig.action_links">
+        <mat-icon class="icon">{{ navLink.icon }}</mat-icon>
+        <a [routerLink]="navLink.href">{{ navLink.title }}</a>
+      </li>
+    </ul>
+  </nav>
+</div>

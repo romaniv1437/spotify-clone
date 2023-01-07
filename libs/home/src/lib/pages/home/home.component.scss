@@ -1,0 +1,25 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    's h'
+    's c';
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 54px 1fr;
+  background-color: #212326;
+
+  .header {
+    height: 54px;
+    grid-area: h;
+  }
+
+  .content {
+    padding: 25px;
+    height: 100%;
+    grid-area: c;
+  }
+
+  .sidebar {
+    grid-area: s;
+  }
+}

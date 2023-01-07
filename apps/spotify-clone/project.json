@@ -1,0 +1,103 @@
+{
+  "name": "spotify-clone",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "apps/spotify-clone/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/spotify-clone",
+        "index": "apps/spotify-clone/src/index.html",
+        "main": "apps/spotify-clone/src/main.ts",
+        "polyfills": "apps/spotify-clone/src/polyfills.ts",
+        "tsConfig": "apps/spotify-clone/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/spotify-clone/src/favicon.ico",
+          "apps/spotify-clone/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+          "apps/spotify-clone/src/styles.scss",
+          "node_modules/typeface-muli/index.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/spotify-clone/src/environments/environment.ts",
+              "with": "apps/spotify-clone/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "spotify-clone:build:production"
+        },
+        "development": {
+          "browserTarget": "spotify-clone:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "spotify-clone:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/spotify-clone/src/test.ts",
+        "polyfills": "apps/spotify-clone/src/polyfills.ts",
+        "tsConfig": "apps/spotify-clone/tsconfig.spec.json",
+        "karmaConfig": "apps/spotify-clone/karma.conf.js",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/spotify-clone/src/favicon.ico",
+          "apps/spotify-clone/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+          "apps/spotify-clone/src/styles.scss"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}

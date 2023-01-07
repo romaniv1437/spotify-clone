@@ -1,0 +1,53 @@
+.header {
+  font-family: 'Space Mono', monospace;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  position: sticky;
+  height: 54px;
+
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 70px;
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: #000000;
+        border-radius: 50%;
+        padding: 2px;
+      }
+    }
+
+    &--links {
+      display: flex;
+      .primary-links {
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 25px;
+          &:hover {
+            transform: scale(1.1);
+          }
+          a {
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}

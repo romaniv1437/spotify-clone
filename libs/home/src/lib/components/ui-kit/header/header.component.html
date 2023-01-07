@@ -1,0 +1,34 @@
+<header class="header">
+  <nav class="nav">
+    <div class="nav--buttons">
+      <div class="button" [id]="headerConfig.nav_buttons.back.id">
+        <mat-icon>{{ headerConfig.nav_buttons.back.icon }}</mat-icon>
+      </div>
+      <div class="button" [id]="headerConfig.nav_buttons.next.id">
+        <mat-icon>{{ headerConfig.nav_buttons.next.icon }}</mat-icon>
+      </div>
+    </div>
+    <div class="nav--links">
+      <ul class=" primary-links separate-left">
+        <li *ngFor="let link of headerConfig.nav_links">
+          <a class="basic--white" [routerLink]="link.titleEN">{{
+            link.title
+            }}</a>
+        </li>
+      </ul>
+      <ul class="primary-links">
+        <li>
+          <a class="basic--white"
+             [routerLink]="headerConfig.nav_authorization.authorization_links.registerLink.titleEN">
+            {{headerConfig.nav_authorization.authorization_links.registerLink.title}}
+          </a>
+        </li>
+        <li>
+          <button class="btn btn-white">
+            {{ headerConfig.nav_authorization.login_button.title }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

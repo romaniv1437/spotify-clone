@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+}
+
+.icon {
+  color: #787777;
+
+  &--white {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+a {
+  color: #787777;
+  &.underline {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.link--white {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &.link--grey {
+    color: #787777;
+    &:hover {
+      color: #787777;
+    }
+  }
+  &.basic--white {
+    color: #787777;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.separate-left {
+  margin-right: 35px;
+  border-right: 2px solid #fff;
+}
+
+.btn {
+  padding: 10px;
+  width: 100px;
+  border-radius: 30px;
+  &--white {
+    background-color: #fff;
+  }
+}
+
+.icon {
+  &--logo {
+    svg {
+      width: 110px;
+      height: 40px;
+    }
+  }
+}
