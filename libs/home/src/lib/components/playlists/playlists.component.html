@@ -1,1 +1,1 @@
-<p>playlists works!</p>
+<div class="playlist" *ngFor="let playlist of playlists$ | ngrxPush">{{playlist.name}}</div>

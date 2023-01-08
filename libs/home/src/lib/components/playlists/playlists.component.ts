@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PlaylistsFacade} from "../../facades/playlists.facade";
+import {Playlist} from "../../Interfaces/PlaylistInterface";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-playlists',
@@ -6,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playlists.component.css'],
 })
 export class PlaylistsComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  public playlists$: Observable<Playlist[]> = new Observable<Playlist[]>()
+  constructor(private playlistsFacade: PlaylistsFacade) {}
+
+  ngOnInit(): void {
+    this.playlists$ = this.playlistsFacade.playlists$;
+
+    this.playlistsFacade.loadPlaylistsBySearchString('focus')
+  }
 }

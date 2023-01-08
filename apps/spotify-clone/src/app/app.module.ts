@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {IconsService} from '../../../../libs/core/src/lib/services/icons.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeModule} from "home";
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HomeModule} from "home";
     BrowserAnimationsModule,
     MatIconModule,
     HttpClientModule,
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
